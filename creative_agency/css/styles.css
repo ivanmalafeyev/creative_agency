@@ -951,6 +951,71 @@ body.lock {
   padding-right: 159px;
 }
 
+.team {
+  padding: 67px 0 30px;
+}
+
+.team__header {
+  margin: 0 0 65px 0;
+}
+
+.team__title {
+  margin: 0 0 70px 0;
+}
+
+.team__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  margin: 0 -15px;
+}
+
+.team__column {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  padding: 0 15px;
+  margin: 0 0 25px 0;
+}
+
+.item-team__image {
+  display: block;
+  padding: 0 0 153.33% 0;
+}
+
+.item-team__card {
+  position: relative;
+  z-index: 2;
+}
+
+.card-team {
+  width: 216px;
+  height: 117px;
+  padding: 20px 0;
+  text-align: center;
+  background-color: white;
+  margin: -48px auto 0;
+}
+
+.card-team__name {
+  color: #11749e;
+  font-family: Gotham;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin: 0 0 15px 0;
+}
+
+.card-team__job {
+  color: #000000;
+  font-family: Gotham;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
 .ibg {
   background-size: cover;
   background-position: center;
@@ -1046,6 +1111,13 @@ textarea.input {
 
   .item-blog__text {
     line-height: 22px;
+  }
+
+  .card-team {
+    width: 176px;
+    height: 97px;
+    padding: 15px 0;
+    margin: -38px auto 0;
   }
 }
 
@@ -1181,6 +1253,33 @@ textarea.input {
 
   .bluebtn--3 {
     padding-right: 64px;
+  }
+
+  .card-team {
+    width: 136px;
+    height: 97px;
+    padding: 12px 0;
+    margin: -28px auto 0;
+  }
+
+  .card-team__name {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .card-team__name {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .card-team__job {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .card-team__job {
+    font-size: 13px;
+    line-height: 20px;
   }
 }
 
@@ -1398,6 +1497,39 @@ textarea.input {
   .bluebtn {
     padding: 12px 15px 8px !important;
   }
+
+  .team {
+    padding: 47px 0 20px;
+  }
+
+  .team__header {
+    margin: 0 0 30px 0;
+  }
+
+  .team__title {
+    margin: 0 0 30px 0;
+  }
+
+  .team__row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 -5px;
+  }
+
+  .team__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    padding: 0 5px;
+    margin: 0 0 10px 0;
+  }
+
+  .card-team {
+    width: 176px;
+    height: 97px;
+    padding: 15px 0;
+    margin: -34px auto 0;
+  }
 }
 
 @media (max-width: 539.98px) {
@@ -1530,6 +1662,24 @@ textarea.input {
     font-size: 18px;
     line-height: 22px;
     margin: 0 0 20px 0;
+  }
+
+  .team {
+    padding: 15px 0 10px;
+  }
+
+  .team__header {
+    margin: 0 0 10px 0;
+  }
+
+  .team__title {
+    margin: 0 0 20px 0;
+  }
+
+  .team__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
   }
 }
 
