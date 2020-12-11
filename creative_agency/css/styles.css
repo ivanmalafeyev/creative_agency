@@ -648,10 +648,85 @@ body.lock {
 
 .item-awesome__text {
   color: #ffffff;
-  font-family: Gotham_Book;
   font-size: 15px;
   line-height: 24px;
   text-align: center;
+}
+
+.akita__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.akita__item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.item-akita--dg {
+  background-color: #222222;
+}
+
+.item-akita--lg {
+  background-color: #f3f3f3;
+}
+
+.item-akita__block {
+  padding: 105px 10px 10px 80px;
+}
+
+.item-akita__image {
+  padding: 0 0 59.2% 0;
+  height: 100%;
+}
+
+.block-item--left {
+  padding-left: calc((100vw - 1170px) / 2);
+}
+
+.block-item--w {
+  color: #ffffff;
+}
+
+.block-item--g {
+  color: #222222;
+}
+
+.block-item__details {
+  font-size: 13px;
+  line-height: 24px;
+  text-align: left;
+  margin: 0 0 5px 0;
+}
+
+.block-item__title {
+  font-family: Gotham;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0 0 40px 0;
+}
+
+.block-item__text {
+  max-width: 469px;
+  font-size: 15px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.block-item__text p {
+  margin: 0 0 30px 0;
+}
+
+.block-item__text p:last-child {
+  margin: 0;
 }
 
 .ibg {
@@ -724,6 +799,10 @@ textarea.input {
   .social-header__link:nth-child(3) {
     padding: 0 14px 0 8px;
   }
+
+  .block-item--left {
+    padding-left: calc((100vw - 979px) / 2 + 10px);
+  }
 }
 
 @media (max-width: 979px) {
@@ -793,6 +872,32 @@ textarea.input {
 
   .block-header__title {
     font-size: 28px;
+  }
+
+  .akita__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .item-akita__block {
+    padding: 70px 10px 10px 40px;
+  }
+
+  .item-akita:nth-child(3) {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+
+  .item-akita:nth-child(4) {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+  .block-item--left {
+    padding-left: 40px;
   }
 }
 
@@ -916,6 +1021,10 @@ textarea.input {
   .item-awesome__title {
     margin: 0 0 20px 0;
   }
+
+  .item-akita__block {
+    padding: 20px 10px 10px 10px;
+  }
 }
 
 @media (max-width: 539.98px) {
@@ -966,6 +1075,23 @@ textarea.input {
 
   .item-awesome__text {
     font-size: 14px;
+  }
+
+  .block-item__details {
+    font-size: 11px;
+  }
+
+  .block-item__title {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+  }
+
+  .block-item__text {
+    font-size: 14px;
+  }
+
+  .block-item__text p {
+    margin: 0 0 15px 0;
   }
 }
 
