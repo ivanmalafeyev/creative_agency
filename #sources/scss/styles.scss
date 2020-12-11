@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap");
 
 $fontfamily: Gotham_Book;
 $minwidth: 320px;
@@ -216,29 +218,53 @@ body {
 .awesome {
   background-color: #11749e;
   color: white;
+  padding: 100px 0 80px;
   &__body {
   }
 
   &__header {
+    margin: 0 0 65px 0;
   }
 
   &__items {
+    @include flexbox();
+    margin: 0 -20px;
   }
 
   &__column {
+    flex: 0 0 (100%/4);
   }
 
   &__item {
+    @include flexbox();
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 45px 0;
+    padding: 0 20px;
   }
 }
 .block-header {
+  position: relative;
   &__bg {
     opacity: 0.18;
-    font-family: "Roboto - Bold Condensed";
+    font-family: "Roboto Condensed";
+    font-weight: 700;
     font-size: 247px;
-    line-height: 210.64px;
+    line-height: 180px;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  &__titleblock {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
   }
 
   &__title {
@@ -246,18 +272,39 @@ body {
     font-size: 38px;
     font-weight: 500;
     line-height: 45.06px;
-    text-align: center;
     text-transform: uppercase;
   }
 }
 .item-awesome {
   &__logo {
+    display: inline-block;
+    width: 133px;
+    height: 133px;
+    background-color: #2e85aa;
+    border-radius: 50%;
+    @include flexbox();
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 20px 0;
   }
 
   &__title {
+    color: #ffffff;
+    font-family: Gotham;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
   }
 
   &__text {
+    color: #ffffff;
+    font-family: Gotham_Book;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
   }
 }
 // =============================================================
@@ -288,7 +335,7 @@ textarea {
   display: block;
   &:focus {
   }
-  &:err {
+  &.err {
     //
     border-color: red;
     //
