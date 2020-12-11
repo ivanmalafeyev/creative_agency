@@ -88,6 +88,7 @@ menuIcon.addEventListener("click", function () {
   menuIcon.classList.toggle("active");
   menu.classList.toggle("active");
   menuSocial.classList.toggle("active");
+  document.body.classList.toggle("lock");
 });
 ; // first fullscreen parallax effect
 

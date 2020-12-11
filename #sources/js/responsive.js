@@ -66,4 +66,5 @@ menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("active");
   menu.classList.toggle("active");
   menuSocial.classList.toggle("active");
+  document.body.classList.toggle("lock");
 });
