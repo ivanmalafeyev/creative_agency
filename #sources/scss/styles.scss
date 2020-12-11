@@ -218,21 +218,47 @@ body {
 .awesome {
   background-color: #11749e;
   color: white;
-  padding: 100px 0 80px;
+  padding: 100px 0 70px;
+  @media (max-width: $md2+px) {
+    padding: 80px 0 50px;
+  }
+  @media (max-width: $md3+px) {
+    padding: 40px 0 20px;
+  }
+  @media (max-width: $md4+px) {
+    padding: 20px 0 0px;
+  }
+
   &__body {
   }
 
   &__header {
     margin: 0 0 65px 0;
+    @media (max-width: $md2+px) {
+      margin: 0 0 35px 0;
+    }
+    @media (max-width: $md4+px) {
+      margin: 0 0 15px 0;
+    }
   }
 
   &__items {
     @include flexbox();
     margin: 0 -20px;
+    @media (max-width: $md2+px) {
+      flex-wrap: wrap;
+      margin: 0 -10px;
+    }
   }
 
   &__column {
     flex: 0 0 (100%/4);
+    @media (max-width: $md2+px) {
+      flex: 0 0 (100%/2);
+    }
+    @media (max-width: $md3+px) {
+      flex: 0 0 (100%/1);
+    }
   }
 
   &__item {
@@ -240,8 +266,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 0 45px 0;
+    margin: 0 0 55px 0;
     padding: 0 20px;
+    @media (max-width: $md2+px) {
+      margin: 0 0 20px 0;
+      padding: 0 10px;
+    }
   }
 }
 .block-header {
@@ -254,6 +284,12 @@ body {
     line-height: 180px;
     text-align: center;
     text-transform: uppercase;
+    @media (max-width: $md3+px) {
+      font-size: 197px;
+    }
+    @media (max-width: $md4+px) {
+      font-size: 167px;
+    }
   }
 
   &__titleblock {
@@ -268,11 +304,19 @@ body {
   }
 
   &__title {
+    text-align: center;
     font-family: Gotham;
     font-size: 38px;
     font-weight: 500;
-    line-height: 45.06px;
+    line-height: 30px;
     text-transform: uppercase;
+    @media (max-width: $md2+px) {
+      font-size: 28px;
+    }
+    @media (max-width: $md4+px) {
+      line-height: 25px;
+      font-size: 16px;
+    }
   }
 }
 .item-awesome {
@@ -286,6 +330,22 @@ body {
     justify-content: center;
     align-items: center;
     margin: 0 0 20px 0;
+    @media (max-width: $md3+px) {
+      width: 103px;
+      height: 103px;
+      margin: 0 0 10px 0;
+      img {
+        @include scale(0.9);
+      }
+    }
+    @media (max-width: $md4+px) {
+      width: 73px;
+      height: 73px;
+      margin: 0 0 10px 0;
+      img {
+        @include scale(0.7);
+      }
+    }
   }
 
   &__title {
@@ -297,6 +357,13 @@ body {
     text-align: center;
     text-transform: uppercase;
     margin: 0 0 30px 0;
+    @media (max-width: $md3+px) {
+      margin: 0 0 20px 0;
+    }
+    @media (max-width: $md4+px) {
+      margin: 0 0 5px 0;
+      font-size: 17px;
+    }
   }
 
   &__text {
@@ -305,6 +372,9 @@ body {
     font-size: 15px;
     line-height: 24px;
     text-align: center;
+    @media (max-width: $md4+px) {
+      font-size: 14px;
+    }
   }
 }
 // =============================================================

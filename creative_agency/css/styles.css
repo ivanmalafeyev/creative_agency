@@ -535,7 +535,7 @@ body.lock {
 .awesome {
   background-color: #11749e;
   color: white;
-  padding: 100px 0 80px;
+  padding: 100px 0 70px;
 }
 
 .awesome__header {
@@ -571,7 +571,7 @@ body.lock {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0 0 45px 0;
+  margin: 0 0 55px 0;
   padding: 0 20px;
 }
 
@@ -608,10 +608,11 @@ body.lock {
 }
 
 .block-header__title {
+  text-align: center;
   font-family: Gotham;
   font-size: 38px;
   font-weight: 500;
-  line-height: 45.06px;
+  line-height: 30px;
   text-transform: uppercase;
 }
 
@@ -764,6 +765,35 @@ textarea.input {
   .footer-body__link {
     margin: 0 0 15px 0;
   }
+
+  .awesome {
+    padding: 80px 0 50px;
+  }
+
+  .awesome__header {
+    margin: 0 0 35px 0;
+  }
+
+  .awesome__items {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 -10px;
+  }
+
+  .awesome__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+
+  .awesome__item {
+    margin: 0 0 20px 0;
+    padding: 0 10px;
+  }
+
+  .block-header__title {
+    font-size: 28px;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -856,6 +886,36 @@ textarea.input {
     width: 45px;
     height: 45px;
   }
+
+  .awesome {
+    padding: 40px 0 20px;
+  }
+
+  .awesome__column {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+
+  .block-header__bg {
+    font-size: 197px;
+  }
+
+  .item-awesome__logo {
+    width: 103px;
+    height: 103px;
+    margin: 0 0 10px 0;
+  }
+
+  .item-awesome__logo img {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  .item-awesome__title {
+    margin: 0 0 20px 0;
+  }
 }
 
 @media (max-width: 539.98px) {
@@ -868,6 +928,44 @@ textarea.input {
 
   .social-header {
     display: none;
+  }
+
+  .awesome {
+    padding: 20px 0 0px;
+  }
+
+  .awesome__header {
+    margin: 0 0 15px 0;
+  }
+
+  .block-header__bg {
+    font-size: 167px;
+  }
+
+  .block-header__title {
+    line-height: 25px;
+    font-size: 16px;
+  }
+
+  .item-awesome__logo {
+    width: 73px;
+    height: 73px;
+    margin: 0 0 10px 0;
+  }
+
+  .item-awesome__logo img {
+    -webkit-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+
+  .item-awesome__title {
+    margin: 0 0 5px 0;
+    font-size: 17px;
+  }
+
+  .item-awesome__text {
+    font-size: 14px;
   }
 }
 
