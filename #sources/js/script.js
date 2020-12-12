@@ -5,6 +5,8 @@
 @@include("webp.js");
 @@include("ibg.js");
 @@include("responsive.js");
+@@include("forms.js");
+@@include("map.js");
 
 // first fullscreen parallax effect
 window.addEventListener("scroll", () => {

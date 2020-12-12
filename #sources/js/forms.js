@@ -1,4 +1,4 @@
-const PLACEHOLDER_OPACITY = "0.5";
+const PLACEHOLDER_OPACITY = 0.5;
 const inputs = document.querySelectorAll(".input");
 if (inputs) {
   [].forEach.call(inputs, (e) => {
@@ -6,7 +6,7 @@ if (inputs) {
     let isPlaceholder = true;
     e.isPlaceholder = isPlaceholder;
     if (dv) {
-      e.style.opacity = PLACEHOLDER_OPACITY;
+      e.style.color = `rgba(255, 255, 255, ${PLACEHOLDER_OPACITY})`;
       e.value = dv;
     }
     e.addEventListener("focus", () => {
@@ -14,7 +14,7 @@ if (inputs) {
         e.value = "";
         isPlaceholder = false;
         e.isPlaceholder = isPlaceholder;
-        e.style.opacity = "1";
+        e.style.color = `rgba(255, 255, 255, 1)`;
       }
     });
     e.addEventListener("blur", () => {
@@ -27,7 +27,7 @@ if (inputs) {
     });
   });
 }
-const form = document.querySelector(".form");
+const form = document.querySelector(".forms");
 if (form) {
   form.addEventListener("submit", (e) => {
     if (formValidate(form) === 0) {

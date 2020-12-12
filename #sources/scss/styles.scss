@@ -99,11 +99,11 @@ body {
     left: 50%;
     bottom: 110px;
     @include tr(-50%, 0, 0);
-    @media (max-height: 850px) {
-      bottom: 40px;
+    @media (max-height: 600px), (max-width: $md4+px) {
+      bottom: 70px;
     }
-    @media (max-height: 600px) {
-      bottom: 30px;
+    @media (max-height: 400px) {
+      bottom: 50px;
     }
   }
 }
@@ -950,7 +950,105 @@ body {
     }
   }
 }
+//---------------------------------------------------
+.form {
+  position: relative;
+  padding: 145px 0 100px;
+  @media (max-width: $md2+px) {
+    padding: 105px 0 60px;
+  }
+  @media (max-width: $md3+px) {
+    padding: 55px 0 40px;
+  }
+  @media (max-width: $md4+px) {
+    padding: 25px 0 30px;
+  }
+  &__header {
+    color: white;
+    margin: 0 0 75px 0;
+    @media (max-width: $md3+px) {
+      margin: 0 0 35px 0;
+    }
+    @media (max-width: $md4+px) {
+      margin: 0 0 10px 0;
+    }
+  }
 
+  &__form {
+  }
+
+  &__row {
+    margin: 0 -15px 20px;
+    @include flexbox();
+    @media (max-width: $md3+px) {
+      flex-direction: column;
+    }
+    @media (max-width: $md4+px) {
+      margin: 0 -10px 10px;
+    }
+  }
+
+  &__column {
+    flex: 0 0 (100%/3);
+    margin: 0 0 20px 0;
+    padding: 0 15px;
+    @media (max-width: $md3+px) {
+      flex: 0 0 (100%/1);
+    }
+    @media (max-width: $md4+px) {
+      padding: 0 10px;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  textarea {
+    margin: 0 0 45px 0;
+    @media (max-width: $md4+px) {
+      margin: 0 0 20px 0;
+    }
+  }
+  .bluebtn {
+    width: 227px;
+    height: 64px;
+    margin: 0 auto;
+    display: block;
+    color: #ffffff;
+    font-family: Gotham;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    @media (max-width: $md3+px) {
+      width: 187px;
+      height: 54px;
+      font-size: 22px;
+      line-height: 22px;
+    }
+    @media (max-width: $md4+px) {
+      width: 147px;
+      height: 48px;
+      font-size: 19px;
+      line-height: 19px;
+      padding: 7px 12px 6px !important;
+    }
+  }
+}
+//----------------------------------------------
+.map {
+  height: 332px;
+  @media (max-width: $md4+px) {
+    height: 252px;
+  }
+}
 // Конец основного блока
 @import "footer.scss";
 //
@@ -971,8 +1069,15 @@ textarea {
   appearance: none;
 }
 .input {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  font-size: 15px;
+  line-height: 36px;
+  padding: 0 10px;
+  color: #ffffff;
   border-radius: 0 !important;
   width: 100%;
+  height: 48px;
   display: block;
   &:focus {
   }
@@ -984,6 +1089,7 @@ textarea {
 }
 textarea.input {
   resize: none;
+  height: 151px;
 }
 .btn {
   display: inline-block;

@@ -90,6 +90,139 @@ menuIcon.addEventListener("click", function () {
   menuSocial.classList.toggle("active");
   document.body.classList.toggle("lock");
 });
+;
+var PLACEHOLDER_OPACITY = 0.5;
+var inputs = document.querySelectorAll(".input");
+
+if (inputs) {
+  [].forEach.call(inputs, function (e) {
+    var dv = e.getAttribute("data-value");
+    var isPlaceholder = true;
+    e.isPlaceholder = isPlaceholder;
+
+    if (dv) {
+      e.style.color = "rgba(255, 255, 255, ".concat(PLACEHOLDER_OPACITY, ")");
+      e.value = dv;
+    }
+
+    e.addEventListener("focus", function () {
+      if (isPlaceholder) {
+        e.value = "";
+        isPlaceholder = false;
+        e.isPlaceholder = isPlaceholder;
+        e.style.color = "rgba(255, 255, 255, 1)";
+      }
+    });
+    e.addEventListener("blur", function () {
+      if (e.value === "") {
+        e.value = dv;
+        isPlaceholder = true;
+        e.isPlaceholder = isPlaceholder;
+        e.style.opacity = PLACEHOLDER_OPACITY;
+      }
+    });
+  });
+}
+
+var form = document.querySelector(".forms");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    if (formValidate(form) === 0) {//
+    } else {
+      e.preventDefault();
+    }
+  });
+}
+
+function formValidate() {
+  var error = 0;
+  var formReq = document.querySelectorAll(".req");
+  [].forEach.call(formReq, function (e) {
+    formRemoveError(e);
+
+    if (e.classList.contains("email")) {
+      if (emailTest(e)) {
+        formAddError(e);
+        error++;
+      }
+    } else if (e.getAttribute("type") === "checkbox" && e.checked === false) {
+      formAddError(e);
+      error++;
+    } else {
+      if (e.value === "" || e.isPlaceholder) {
+        formAddError(e);
+        error++;
+      }
+    }
+  });
+  return error;
+}
+
+function formAddError(input) {
+  input.parentElement.classList.add("err");
+  input.classList.add("err");
+}
+
+function formRemoveError(input) {
+  input.parentElement.classList.remove("err");
+  input.classList.remove("err");
+}
+
+function emailTest(input) {
+  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+}
+
+;
+
+function initMap(n) {
+  google.maps.Map.prototype.setCenterWithOffset = function (latlng, offsetX, offsetY) {
+    var map = this;
+    var ov = new google.maps.OverlayView();
+
+    ov.onAdd = function () {
+      var proj = this.getProjection();
+      var aPoint = proj.fromLatLngToContainerPixel(latlng);
+      aPoint.x += offsetX;
+      aPoint.y += offsetY;
+      map.panTo(proj.fromContainerPixelToLatLng(aPoint)); // map.setCenter(proj.fromContainerPixelToLatLng(aPoint));
+    };
+
+    ov.draw = function () {};
+
+    ov.setMap(this);
+  };
+
+  var markers = new Array();
+  var infoWindow = new google.maps.InfoWindow({// pixelOffset: new google.maps.Size(-230, 250)
+  });
+  var locations = [[new google.maps.LatLng(53.22756, 50.173902)]];
+  var options = {
+    zoom: 12,
+    panControl: false,
+    mapTypeControl: false,
+    center: locations[0][0],
+    scrollwheel: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.querySelector(".map"), options);
+  var icon = {
+    url: "",
+    scaledSize: new google.maps.Size(18, 20),
+    anchor: new google.maps.Point(9, 10)
+  };
+
+  for (var i = 0; i < locations.length; i++) {
+    var marker = new google.maps.Marker({
+      // icon: icon,
+      position: locations[i][0],
+      map: map
+    });
+    markers.push(marker);
+  }
+}
+
+initMap();
 ; // first fullscreen parallax effect
 
 window.addEventListener("scroll", function () {

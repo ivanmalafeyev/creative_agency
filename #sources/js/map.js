@@ -23,7 +23,7 @@ function initMap(n) {
   });
   var locations = [[new google.maps.LatLng(53.22756, 50.173902)]];
   var options = {
-    zoom: 10,
+    zoom: 12,
     panControl: false,
     mapTypeControl: false,
     center: locations[0][0],
