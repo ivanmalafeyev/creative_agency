@@ -1,12 +1,12 @@
 .header {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   padding: 22px 0 26px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.38);
-  // z-index: 111;
-  @media (max-width: $md3+px) {
+  z-index: 111;
+  @media (max-width: $md3+px), (max-height: 450px) {
     padding: 12px 0 6px;
   }
   .container {
@@ -26,7 +26,7 @@
     justify-content: center;
     align-items: center;
     box-shadow: 12px 8px rgba(255, 255, 255, 0.75);
-    @media (max-width: $md3+px) {
+    @media (max-width: $md3+px), (max-height: 450px) {
       width: 45px;
       height: 45px;
       box-shadow: 6px 4px black;
@@ -162,6 +162,9 @@
         height: 6px;
         background-color: #11749e;
         display: none;
+        @media (max-width: $md3+px), (max-height: 450px) {
+          bottom: -26px;
+        }
       }
     }
   }

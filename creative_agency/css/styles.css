@@ -198,12 +198,13 @@ body.lock {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   padding: 22px 0 26px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.38);
+  z-index: 111;
 }
 
 .header .container {
@@ -840,6 +841,7 @@ body.lock {
 }
 
 .item-cites__text {
+  margin: -7px 0 0 0;
   color: #ffffff;
   font-size: 15px;
   line-height: 24px;
@@ -964,19 +966,11 @@ body.lock {
 }
 
 .team__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0;
   margin: 0 -15px;
 }
 
 .team__column {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 25%;
-          flex: 0 1 25%;
   padding: 0 15px;
-  margin: 0 0 25px 0;
 }
 
 .item-team__image {
@@ -1162,6 +1156,55 @@ textarea.input {
   color: black !important;
 }
 
+.slick-slider {
+  position: relative;
+}
+
+.slick-slider .slick-list {
+  overflow: hidden;
+}
+
+.slick-slider .slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.slick-slider .slick-dots {
+  padding: 10px 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slick-slider .slick-dots li {
+  margin: 0 9px;
+}
+
+.slick-slider .slick-dots li button {
+  font-size: 0;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #222;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.slick-slider .slick-dots li.slick-active button {
+  background-color: #222;
+}
+
 @media (max-width: 1182px) {
   .container {
     max-width: 979px;
@@ -1214,6 +1257,10 @@ textarea.input {
     height: 97px;
     padding: 15px 0;
     margin: -38px auto 0;
+  }
+
+  .slick-slider .slick-dots {
+    padding: 0;
   }
 }
 
@@ -1390,24 +1437,11 @@ textarea.input {
 @media (max-width: 767.98px) {
   body.lock {
     width: 100%;
-    position: fixed;
   }
 
   .container {
     max-width: none;
     padding: 0 10px;
-  }
-
-  .header {
-    padding: 12px 0 6px;
-  }
-
-  .header__logo {
-    width: 45px;
-    height: 45px;
-    -webkit-box-shadow: 6px 4px black;
-            box-shadow: 6px 4px black;
-    margin: 0 0 10px 0;
   }
 
   .header__icon {
@@ -1615,17 +1649,11 @@ textarea.input {
   }
 
   .team__row {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     margin: 0 -5px;
   }
 
   .team__column {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 50%;
-            flex: 0 1 50%;
     padding: 0 5px;
-    margin: 0 0 10px 0;
   }
 
   .card-team {
@@ -1668,6 +1696,24 @@ textarea.input {
   }
 }
 
+@media (max-width: 767.98px), (max-height: 450px) {
+  .header {
+    padding: 12px 0 6px;
+  }
+
+  .header__logo {
+    width: 45px;
+    height: 45px;
+    -webkit-box-shadow: 6px 4px black;
+            box-shadow: 6px 4px black;
+    margin: 0 0 10px 0;
+  }
+
+  .menu-header__list li:after {
+    bottom: -26px;
+  }
+}
+
 @media (max-width: 539.98px) {
   .social-header.active {
     position: absolute;
@@ -1678,6 +1724,10 @@ textarea.input {
 
   .social-header {
     display: none;
+  }
+
+  .mainblock__bg {
+    background-position: -45px 0px;
   }
 
   .awesome {
@@ -1782,6 +1832,7 @@ textarea.input {
   .item-cites__text {
     font-size: 13px;
     line-height: 18px;
+    margin: -4px 0 0 0;
   }
 
   .features__column {
@@ -1812,12 +1863,6 @@ textarea.input {
     margin: 0 0 20px 0;
   }
 
-  .team__column {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 100%;
-            flex: 0 1 100%;
-  }
-
   .form {
     padding: 25px 0 30px;
   }
@@ -1836,7 +1881,7 @@ textarea.input {
   }
 
   .form textarea {
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
   }
 
   .form .bluebtn {
@@ -1873,11 +1918,22 @@ textarea.input {
             order: 1;
     padding: 0 0 5px 0;
   }
+
+  .slick-slider .slick-dots li button {
+    width: 9px;
+    height: 9px;
+  }
+}
+
+@media (max-width: 539.98px) and (min-height: 800px) {
+  .mainblock__bg {
+    background-position: -105px 0px;
+  }
 }
 
 @media (max-height: 600px), (max-width: 539.98px) {
   .mainblock__footer {
-    bottom: 70px;
+    bottom: 80px;
   }
 }
 

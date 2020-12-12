@@ -61,10 +61,28 @@ function resize() {
 const menuIcon = document.querySelector(".header__icon");
 const menu = document.querySelector(".header__menu");
 const menuSocial = document.querySelector(".header__social");
+const links = document.querySelectorAll(".menu-header__link");
 
 menuIcon.addEventListener("click", () => {
-  menuIcon.classList.toggle("active");
-  menu.classList.toggle("active");
-  menuSocial.classList.toggle("active");
-  document.body.classList.toggle("lock");
+  function toggleClass(c) {
+    menuIcon.classList.toggle(c);
+    menu.classList.toggle(c);
+    menuSocial.classList.toggle(c);
+    [].forEach.call(links, (lnk) => {
+      lnk.classList.toggle("active");
+    });
+    document.body.classList.toggle("lock");
+  }
+  toggleClass("active");
+
+  function linkCB() {
+    toggleClass("active");
+    [].forEach.call(links, (l) => {
+      l.removeEventListener("click", linkCB);
+    });
+  }
+
+  [].forEach.call(links, (l) => {
+    l.addEventListener("click", linkCB);
+  });
 });

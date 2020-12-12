@@ -206,7 +206,6 @@
       } else {
         tagsNodeList = galleryElement.getElementsByTagName("a");
       }
-
       // Filter 'a' elements from those not linking to images
       tagsNodeList = [].filter.call(tagsNodeList, function (element) {
         if (
@@ -216,6 +215,7 @@
           return regex.test(element.href);
         }
       });
+      console.log(tagsNodeList);
       if (tagsNodeList.length === 0) {
         return;
       }
