@@ -731,6 +731,11 @@ body.lock {
   margin: 0;
 }
 
+.blog {
+  max-width: 100vw;
+  width: 100vw;
+}
+
 .blog__body {
   padding: 92px 0 70px;
 }
@@ -831,7 +836,7 @@ body.lock {
 }
 
 .item-cites__img {
-  display: inline-block;
+  display: block;
   margin: 0 34px 0 0;
 }
 
@@ -886,17 +891,6 @@ body.lock {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.features__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .features__image img {
@@ -1030,8 +1024,8 @@ body.lock {
 
 .form__column {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 33.33333%;
-          flex: 0 0 33.33333%;
+      -ms-flex: 0 1 33.33333%;
+          flex: 0 1 33.33333%;
   margin: 0 0 20px 0;
   padding: 0 15px;
 }
@@ -1121,8 +1115,8 @@ textarea {
   background-color: transparent;
   border: 1px solid #ffffff;
   font-size: 15px;
-  line-height: 36px;
-  padding: 0 10px;
+  line-height: 22px;
+  padding: 5px 10px;
   color: #ffffff;
   border-radius: 0 !important;
   width: 100%;
@@ -1136,6 +1130,7 @@ textarea {
 
 textarea.input {
   resize: none;
+  overflow: auto;
   height: 151px;
 }
 
@@ -1373,9 +1368,10 @@ textarea.input {
   }
 
   .blog__column {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 50%;
-            flex: 1 1 50%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    max-width: 50%;
   }
 
   .cites__column {
@@ -1576,10 +1572,7 @@ textarea.input {
   }
 
   .cites__row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: block;
   }
 
   .cites__column:last-child {
@@ -1672,16 +1665,7 @@ textarea.input {
   }
 
   .form__row {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .form__column {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 100%;
-            flex: 0 0 100%;
+    display: block;
   }
 
   .form .bluebtn {
@@ -1798,6 +1782,7 @@ textarea.input {
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
     margin: 0 0 20px 0;
+    max-width: 100%;
   }
 
   .block-title {
